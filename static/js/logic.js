@@ -59,7 +59,7 @@ d3.json(queryUrl, function(data) {
     var outdoorsmap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
         attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
         maxZoom: 18,
-        id: "mapbox.streets",
+        id: "mapbox.mapbox-streets-v8",
         accessToken: API_KEY
     });
   
@@ -73,7 +73,7 @@ d3.json(queryUrl, function(data) {
     var grayscalemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
       attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
       maxZoom: 18,
-      id: "mapbox.grayscale",
+      id: "mapbox.mapbox-terrain-v2",
       accessToken: API_KEY
     });
   
@@ -135,9 +135,9 @@ d3.json(queryUrl, function(data) {
   });
 
   info.onAdd = function() {
-    var div = L.DomUtil.create("div", "info legend"),
-      labels = ["0-1", "1-2", "2-3", "3-4", "4-5", "5+"];
-      colors = ['#ba047a', '#009c0d', '#b4e000', '#ffc800', '#ff8000','#ff0800'];
+    var div = L.DomUtil.create("div", "info legend");
+    var labels = ["0-1", "1-2", "2-3", "3-4", "4-5", "5+"];
+    var  colors = ['#ba047a', '#009c0d', '#b4e000', '#ffc800', '#ff8000','#ff0800'];
 
     for (var i = 0; i < labels.length; i++) {
       div.innerHTML += '<i style="background-color:'+colors[i]+'"></i> ' +
